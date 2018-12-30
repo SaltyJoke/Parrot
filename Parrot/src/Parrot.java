@@ -7,6 +7,7 @@ import javax.sound.sampled.SourceDataLine;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 
 public class Parrot {
 	TargetDataLine microphone;
@@ -15,6 +16,14 @@ public class Parrot {
 	int pieceLength = 17640;
 	
 	public static void main(String[] args) {
+		JFrame frame = new JFrame("Parrot");
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setSize(500, 200);
+		
+		frame.setVisible(true);
+		
 		Parrot parrot = new Parrot();
 		try {
 			parrot.initialize();
